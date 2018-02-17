@@ -7,9 +7,7 @@ function levelUP(nivel) {
  nivel.xp = planilha.getRange(nivel.xp);
  nivel.desejado = nivel.atualPos.getValue() + 1;
  nivel.nome = planilha.getRange(nivel.nome).getValue()//.split(" ");
- 
-
- 
+  
  var expNecessario = NeededEXP(nivel.atualPos.getValue(),nivel.multiplicador);
  
      if(expNecessario <=  nivel.xp.getValue()){
@@ -17,7 +15,7 @@ function levelUP(nivel) {
        nivel.atualPos.setValue(nivel.atualPos.getValue() + 1);
        nivel.xp.setValue(nivel.xp.getValue() - expNecessario);       
           Update(planilha);
-     }
+     }  
 }
 
 function NeededEXP(a, m){    
