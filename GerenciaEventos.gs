@@ -14,9 +14,9 @@ function gerenteEventos(evento) {
     case 'RdzChakra':
       ConsomeRecurso(evento.atrChakra);
       break;
-    case 'APUP':
+    case 'levelUpParam':
       levelUP(evento.destino);
-      break;      
+      break;         
   }
   
 }
