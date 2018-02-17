@@ -1,22 +1,34 @@
 function onEdit(event)
 {
-  var planilha = SpreadsheetApp.getActiveSpreadsheet(); 
-  var s = event.source.getActiveSheet(); 
-  var exp = event.range; 
+  var planilha = SpreadsheetApp.getActiveSpreadsheet();  
+  var s = event.source.getActiveSheet();  
+  var exp = event.range;  
   var nomePersonagem = SpreadsheetApp.getActive().getName().split(" ");
     nomePersonagem = nomePersonagem[nomePersonagem.length -1];
    
    if( exp.getA1Notation() === 'B31')
-       Update(planilha,exp);
+       Update(s);
   
 }
 
-function Update(planilha,exp)
+function Update(planilha)
 {
-    raiseParam.forEach(function(valor, chave){
+    var exp = planilha.getRange(Exp);
+    
+    raiseParam.forEach(function(valor, chave)
+    {
+        var valorParam = planilha.getRange(valor.atual).getValue();
+        var linha =  planilha.getRange(valor.atual).getRow();
+        var col =  planilha.getRange(valor.atual).getColumn(); 
+        var bg = planilha.getRange(linha,col+1);
         
-       if(NeededEXP(planilha.getRange(valor.atual).getValue(), valor.multiplicador) <= exp.getValue())
-            Browser.msgBox('Posicao desse cara: ' +planilha.getRange(valor.atual).getRow() + ' nome desse cara: ' + planilha.getRange(valor.nome).getValue()); 
-          });
+             if(NeededEXP(valorParam, valor.multiplicador) <= exp.getValue())
+                  bg.setFormula(bgUP);     
 
+             else
+                  bg.clearContent();             
+    });
+    
+     Browser.msgBox("Planilha atualizada!");
 }
+
