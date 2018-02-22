@@ -1,5 +1,7 @@
 var raiseParam = [];
 
+/*global Multiplicador*/
+
 var Exp = 'B31';
 var vida =  { atual: 'F2', max: 'B2', nome: 'E2'}
 var chakra = { atual: 'F3', max: 'B3', nome: 'E3'}
