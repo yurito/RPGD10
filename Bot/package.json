@@ -1,0 +1,16 @@
+{
+  "name": "Naruto-RPG",
+  "version": "0.0.1",
+  "description": "Bot Naruto RPG",
+  "main": "bot.js",
+  "author": "Yuri Farias",
+  "dependencies": {
+    "discord.io": "^2.5.3",
+    "winston": "^2.4.0"
+  },
+  "repository": {
+  "type": "git",
+  "url": "git:github.com/yurito/RPGD10.git"
+  },
+  "license": "Apache-2.0"
+}
