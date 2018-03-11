@@ -6,7 +6,7 @@ function onEdit(event)
   var nomePersonagem = SpreadsheetApp.getActive().getName().split(" ");
     nomePersonagem = nomePersonagem[nomePersonagem.length -1];
    
-   if( exp.getA1Notation() === 'B31')
+   if( exp.getA1Notation() === 'B31' && event.source.getActiveSheet().getName() == 'Dados')
        Update(s);
   
 }
